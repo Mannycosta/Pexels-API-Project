@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #232A34;
+  height: 66px;
+  position: relative;
+}
+.header img {
+  width: 114px;
+  margin: 0px ;
+}
+.search-bar {
+  width: 500px;
+  font-weight: 300;
+  font-size: 17px;
+  color: black;
+  height: 46px;
+  padding: 0px 20px;
+  border: none;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.search-bar:focus{
+  outline: none;
+}
+button {
+  color: #5E5E5E;
+  border: none;
+  background-color: white;
+  position: absolute;
+  height: 46px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+button:hover {
+  cursor: pointer;
+}
+i {
+  font-size: 17px;
+  font-weight: bold;
+}
+.empty-space {
+  width: 114px;
+}
+.search-results-text{
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.results{
+  font-size: 26px;
+  font-weight: 900;
+  color: #1a1a1a;
+}
+.photos-section {
+  display: flex;
+  margin: 0px 50px;
+}
+@media only screen and (max-width: 1300px) {
+  .photos-section {
+    margin: 0px 15px;
+  }
+}
+.photos {
+  width: 100%;
+  position: relative;
+}
+.photographer {
+  position: absolute;
+  font-weight: 300;
+  color: white;
+  padding: 10px;
+  bottom: 0px;
+  left: 16px;
+  /* background-image: -webkit-radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.001)); */
+}
+.left-side{
+ width: 25%;
+ margin-right: 20px;
+}
+.left-center-side{
+  width: 25%;
+  margin-right: 20px;
+}
+.right-center-side{
+  width: 25%;
+  margin-right: 20px;
+}
+.right-side{
+  width: 25%;
+}
+img {
+  width:100%;
+  margin-bottom: 15px;
+}
+img:hover {
+  cursor: pointer;
+}
+.overlay {
+  position: absolute;
+  top: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 25%;
+  opacity: 0;
+  transition: .25s ease;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+  margin-bottom: 19px;
+}
+.photos:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}

@@ -33,58 +33,20 @@ xhttp.onreadystatechange = function() {
             resultsText.innerHTML = `We Couldn't Find Anything For "${searchValueCapitalized}"`;
             resultsTextSection.appendChild(resultsText);
        }
-       var leftPhotosSection = document.querySelector('.left-side')
-       var leftCenterPhotosSection = document.querySelector('.left-center-side')
-       var rightCenterPhotosSection = document.querySelector('.right-center-side')
-       var rightPhotosSection = document.querySelector('.right-side')
+       var photosSection = document.querySelector('.photos-section')
 
-       leftPhotosSection.innerHTML = '';
-       leftCenterPhotosSection.innerHTML = '';
-       rightCenterPhotosSection.innerHTML = '';
-       rightPhotosSection.innerHTML = '';
+       photosSection.innerHTML = '';
        
-       data.forEach(function(photo, i) {
-        if (i % 4 === 0) {
-            var leftPhotoDiv = document.createElement('div');
-            leftPhotoDiv.className = 'photos';
-            leftPhotoDiv.innerHTML = `
+       data.forEach(function(photo) {
+            var photoDiv = document.createElement('div');
+            photoDiv.className = 'photos';
+            photoDiv.innerHTML = `
             <img class ="photo-align" src='${photo.src.large}'>
             <div class="overlay">
             <p class="photographer">${photo.photographer}</p>
             </div>
             `;
-            leftPhotosSection.appendChild(leftPhotoDiv)
-          } else if (i % 4 === 1){
-            var leftCenterPhotoDiv = document.createElement('div');
-            leftCenterPhotoDiv.className = 'photos';
-            leftCenterPhotoDiv.innerHTML = `
-            <img class ="photo-align" src='${photo.src.large}'>
-            <div class="overlay">
-            <p class="photographer">${photo.photographer}</p>
-            </div>
-            `;
-            leftCenterPhotosSection.appendChild(leftCenterPhotoDiv)
-          } else if (i % 4 === 2){
-            var rightCenterPhotoDiv = document.createElement('div');
-            rightCenterPhotoDiv.className = 'photos';
-            rightCenterPhotoDiv.innerHTML = `
-            <img class ="photo-align" src='${photo.src.large}'>
-            <div class="overlay">
-            <p class="photographer">${photo.photographer}</p>
-            </div>
-            `;
-            rightCenterPhotosSection.appendChild(rightCenterPhotoDiv)
-          } else if (i % 4 === 3){
-            var rightPhotoDiv = document.createElement('div');
-            rightPhotoDiv.className = 'photos';
-            rightPhotoDiv.innerHTML = `
-            <img class ="photo-align" src='${photo.src.large}'>
-            <div class="overlay">
-            <p class="photographer">${photo.photographer}</p>
-            </div>
-            `;
-            rightPhotosSection.appendChild(rightPhotoDiv)
-          }
+            photosSection.appendChild(photoDiv)
        }) 
     }
 };
@@ -92,5 +54,4 @@ xhttp.open("GET", `https://api.pexels.com/v1/search?query=${searchValue}&per_pag
 xhttp.setRequestHeader('Authorization', '563492ad6f91700001000001e4cb0352c03241f49b991566cbbf976d')
 xhttp.send();
 })
-
 
